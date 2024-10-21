@@ -1,4 +1,7 @@
 package lab1.task2;
+import java.sql.Time;
+import java.util.concurrent.TimeUnit;
+
 
 public class JobMarket {
 
@@ -28,17 +31,17 @@ public class JobMarket {
         Microsoft.minGrade = 5.0f;
         Microsoft.setName("Microsoft");
 
-        String s1 ="Gigel";
+        String s1 = "Gigel";
         String s2 = "Marcel";
         String s3 = "Dorel";
         String s4 = "Ionel";
         String[] arr = {s1, s2, s3, s4};
-        double[] grades = {Gigel.grade,Marcel.grade,Dorel.grade,Ionel.grade};
+        double[] grades = {Gigel.grade, Marcel.grade, Dorel.grade, Ionel.grade};
 
-        Google.setStudents(arr,grades);
-        Amazon.setStudents(arr,grades);
-        Facebook.setStudents(arr,grades);
-        Microsoft.setStudents(arr,grades);
+        Google.setStudents(arr, grades);
+        Amazon.setStudents(arr, grades);
+        Facebook.setStudents(arr, grades);
+        Microsoft.setStudents(arr, grades);
 
         Google.chooseCandidatesForInterview();
         System.out.println("\n");
@@ -47,5 +50,13 @@ public class JobMarket {
         System.out.println("\n");
 
         Microsoft.chooseCandidatesForInterview();
+        System.out.println("\n");
+
+        try {
+            // Make the application wait for 5 seconds (5000 milliseconds)
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
